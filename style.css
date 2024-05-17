@@ -1,0 +1,170 @@
+
+html {
+	font-size: calc(15px + 0.390625vw);
+	touch-action: manipulation;
+	height: 100%;
+}
+
+body {
+	color: white;
+	font-family: "IBM Plex Mono", monospace;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	--dot-color: rgb(207, 207, 207);
+	--background-1: #1F2122;
+	--background-2: #3f3f3f;
+	/*
+	background:
+		linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+	    linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),	
+		var(--dot-color);
+	background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), #3498db 5%, #9b59b6);
+
+	background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), #494949 0%, #1F2122), radial-gradient(black 5%, white 5%), linear-gradient(in oklab longer hue 45deg, red 0 0);
+	background-size: 100vw 100vh, 70px 70px, 100vw 100vh;
+	background-blend-mode: luminosity, lighten;
+	*/
+	background: radial-gradient(var(--dot-color) 3%, transparent 3%), radial-gradient(circle at var(--mouse-x, 100%) var(--mouse-y, 0%), var(--background-2) 0%, var(--background-1));
+	background-size: 70px 70px, 100% 100%;
+}
+
+.page-container {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+
+
+.page-container > * {
+	width: 60%;
+	min-height: 15vh;
+}
+
+.page-container > .title-container {
+	width: 100%;
+}
+
+.name {
+	width: min-content;
+	margin: 0 30px;
+	font-size: 7rem;
+}
+
+.list {
+	margin-left: 15px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.list > * {
+	margin: 10px 20px;
+	font-size: 1.5rem;
+}
+
+.subheading {
+	font-size: 3rem;
+	margin: 15px;
+}
+
+a {
+	font-weight: 300;
+	text-decoration: none;
+	color: white;
+	background: var(--link-background, white) 0% 101% / var(--x, 0) no-repeat text;
+	background-color: white;
+	-webkit-text-fill-color: transparent;
+	transition: 0.5s ease-in-out;
+}
+
+a:hover, a.animate {
+	--x: 100%
+}
+
+a#github {
+	--link-background: linear-gradient(to right, #39D353 17%, #006d32 17% 34%, #0e4429 34% 51%, #26a641 51% 68%,#39D353 68%);
+}
+
+a#discord{
+	--link-background: linear-gradient(to right, #5865F2 86%, #ED4245 86%);
+}
+
+a#twitter {
+	--link-background: linear-gradient(#00A0F2 0 0);
+}
+
+a#email {
+	--link-background: linear-gradient(to right, #4285F4 20%, #bb001b 20% 40%, #EA4335 40% 60%, #FBBC05 60% 80%, #34A853 80%)
+}
+
+a#ts {
+	--link-background: linear-gradient(to right, #3076C3 40%, #FFFFFF 40%);
+}
+
+a#js {
+	--link-background: linear-gradient(to right, #F2DB1C 40%, #FFFFFF 40%);
+}
+
+a#py {
+	--link-background: linear-gradient(to right, #356D9D 33%, #FBCE3D 33%);
+}
+
+a#java {
+	--link-background: linear-gradient(to right, #007396 50%, #ED8B00 50%);
+}
+
+a#vue {
+	--link-background: linear-gradient(#41B883 0 0)
+}
+
+a#djs {
+	--link-background: linear-gradient(to right, #5865F2 80%, #FF5C5C 80% 83%, #F79454 83% 86%, #FFDB5C 86% 89%, #5CFF9D 92% 95%, #5C6CFF 95% 98%, #B75CFF 98%)
+}
+
+a#decipher {
+	--link-background: linear-gradient(to right, #D0BE08 67%, #3A0CCD 67%)
+}
+
+@media only screen and (pointer: none), only screen and (pointer: coarse) {
+	body {
+		background: radial-gradient(var(--dot-color) 3%, transparent 3%), var(--background-1);
+		background-size: 70px 70px;
+	}
+
+}
+
+@media only screen and (max-width: 900px) {	
+	.page-container > * {
+		width: 100%;
+		min-height: 0;
+	}
+	
+	.name {
+		width: min-content;
+		margin: 0 10px;
+		font-size: 5rem;
+	}
+	
+	.list {
+		margin-left: 20px;
+	}
+	
+	.list > * {
+		margin: 5px 20px 5px 0px;
+		font-size: 1.5rem;
+	}
+	
+	.subheading {
+		font-size: 2.5rem;
+		margin: 5px 15px;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	.name {
+		font-size: 3.5rem;
+	}
+
+}
